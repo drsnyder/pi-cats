@@ -3,12 +3,12 @@ import PI.unsafeCalculatePi
 
 
 object Main extends App {
-  def getIterations: Int = args match {
-    case Array(num, _*) => num.toInt
-    case _ => 1000
+  def getTolerance: Double = args match {
+    case Array(num, _*) => num.toDouble
+    case _ => 0.0001
   }
 
-  val iterations = getIterations
-  val estimate = unsafeCalculatePi(iterations)
-  println(s"Estimated $estimate for Pi after $iterations iterations.")
+  val tolerance = getTolerance
+  val estimate = unsafeCalculatePi(tolerance)
+  println(s"Estimated $estimate for Pi.")
 }
