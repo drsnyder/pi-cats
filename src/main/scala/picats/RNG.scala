@@ -21,5 +21,5 @@ object RNG {
 
     def runRng[A](seed: Long)(rng: RNG[A]): A = rng.runA(seed).value
 
-    def unsafeRunRng[A]: RNG[A] ⇒ A = runRng(System.currentTimeMillis)
+    def unsafeRunRng[A]: RNG[A] => A = runRng(System.currentTimeMillis)
 }
